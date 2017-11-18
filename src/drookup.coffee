@@ -18,7 +18,7 @@ module.exports = (robot) ->
   base_url = "https://api.drupal.org"
   api_url = "#{base_url}/api/drupal"
   api_version = "8.4.x"
-  robot.hear /dapi (.*)/i, (res) ->
+  robot.hear /^dapi (.*)/i, (res) ->
     keyword = res.match[1]
     search_url = "#{api_url}/#{api_version}/search/#{keyword}"
     robot.http(search_url)
